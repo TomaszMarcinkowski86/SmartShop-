@@ -1,0 +1,14 @@
+pl\sda\model\Product.class
+pl\sda\controller\ShowProductsController.class
+pl\sda\dao\ProductImageDao.class
+pl\sda\mapper\ProductMapper.class
+pl\sda\model\OperatingSystem.class
+pl\sda\entity\ProductEntity$ProductEntityBuilder.class
+pl\sda\service\ProductService.class
+pl\sda\dao\ProductImageDaoImpl.class
+pl\sda\dao\ProductDao.class
+pl\sda\entity\ProductEntity.class
+pl\sda\model\Brand.class
+pl\sda\model\Product$ProductBuilder.class
+pl\sda\service\ProductServiceImpl.class
+pl\sda\dao\ProductDaoImpl.class
