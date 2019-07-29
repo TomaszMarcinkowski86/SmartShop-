@@ -34,13 +34,14 @@
     <div id="fourthColumn" class="col-sm-2">
         <h2>${product.price} zł</h2>
         <form action="/dodaj-do-koszyka" method="POST">
-            <button
-                    type="submit" class="btn btn-default" name="productId" value="${product.id}">Do koszyka
+            <button type="submit" class="btn btn-default" name="productId" value="${product.id}">Do
+                koszyka
             </button>
-            <form action="/dodaj-do-koszyka" method="POST">
-                <button
-                        type="submit" class="btn btn-default" name="productId" value="${product.id}">Kup Teraz
-                </button>
+        </form>
+        <form action="/dodaj-do-koszyka" method="POST">
+        <button type="submit" class="btn btn-default" name="productId" value="${product.id}">Kup Teraz
+        </button>
+        </form>
     </div>
 
 </div>
