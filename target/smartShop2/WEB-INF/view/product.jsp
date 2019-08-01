@@ -38,8 +38,9 @@
                 koszyka
             </button>
         </form>
-        <form action="${pageContext.request.contextPath}/invalidate-session">
-            <input type="submit" value="Kup Teraz" style="float: right;">
+        <form action="/dodaj-do-koszyka" method="POST">
+        <button type="submit" class="btn btn-default" name="productId" value="${product.id}">Kup Teraz
+        </button>
         </form>
     </div>
 

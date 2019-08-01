@@ -44,7 +44,10 @@
                 <h1></h1>
             </div>
             <div id="fourthColumn" class="col-sm-2">
-                <h2>${product.price} zł</h2>
+                <div class="col-md-3" id="price">
+                    <fmt:setLocale value="pl_PL"/>
+                    <h5><fmt:formatNumber value="${product.price}" type="currency" minFractionDigits="2"/></h5>
+                </div>
                 <form action="/dodaj-do-koszyka" method="POST">
                     <button type="submit" class="btn btn-default" name="productId" value="${product.id}">Do
                         koszyka

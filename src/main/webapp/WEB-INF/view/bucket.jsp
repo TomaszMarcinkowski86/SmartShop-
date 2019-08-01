@@ -47,7 +47,21 @@
                                                               minFractionDigits="2"/></h3>
                 </div>
             </div>
-
+            <div class="row">
+                <div class="col-md-4">
+                    <c:choose>
+                        <c:when test="${isLogin}">
+                            <form action="/kup-i-zaplac" method="POST">
+                                <button type="submit" class="btn btn-default" value="${product.id}">Kup i Zapłać</button>
+                            </form>
+                        </c:when>
+                        <c:otherwise>
+                            <form action="/login" method="POST">
+                                Aby przejść dalej musisz być zalogowany <button type="submit" class="btn btn-primary" name="productId">Zaloguj się!</button>
+                            </form>
+                        </c:otherwise>
+                    </c:choose>
+                </div>
 
         </div>
     </div>
