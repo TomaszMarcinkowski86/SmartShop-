@@ -18,22 +18,27 @@ public class BucketServiceImpl implements BucketService {
 
     @Override
     public List<Long> getProductsId(HttpServletRequest request) {
-        return (List<Long>) request.getSession().getAttribute("bucket");
+        List<Long> productsId = (List<Long>) request.getSession().getAttribute("bucket");
+        return productsId == null ? new ArrayList<>() : productsId;
     }
 
     @Override
     public void deleteProduct(HttpServletRequest req, Long productId) {
         List<Long> bucket = (List<Long>) req.getSession().getAttribute("bucket");
 
-        if(bucket!=null){
+        if (bucket != null) {
             bucket.remove(productId);
         }
 
     }
 
-
     @Override
-    public void cleanProduct(HttpServletRequest request) {
+    public void cleanBucket(HttpServletRequest req) {
+
+        List<Long> bucket = (List<Long>) req.getSession().getAttribute("bucket");
+        if (bucket != null) {
+            bucket.clear();
+        }
 
     }
 }

@@ -63,6 +63,8 @@
                     </c:choose>
                 </div>
 
+<%--do zrobienia- zrobić ifa który sprawdzi warunek bo jak koszyk pustu to dalej jest przycisk kup i zaplac. trzeba by przekierować na widok Twój kszyk jest pusty--%>
+
         </div>
     </div>
         <script src="webjars/jquery/3.4.1/jquery.min.js"/>

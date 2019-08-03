@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 public class AuthenticationServiceImpl implements AuthenticationService {
 
     private UserService userService = new UserServiceImpl();
+    private final static String IS_AUTHENTICATED = "isAuthenticated";
 
     @Override
     public boolean authenticate(HttpServletRequest request) {
@@ -16,18 +17,25 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         String password = request.getParameter("password");
         User user = userService.getUser(login);
         if (user != null && user.getPassword().equals(password)) {
-            request.getSession().setAttribute("isAuthenticated", true);
+            request.getSession().setAttribute(IS_AUTHENTICATED, true);
             return true;
         }
-        request.getSession().setAttribute("isAuthenticated", false);
+        request.getSession().setAttribute(IS_AUTHENTICATED, false);
         return false;
     }
 
     @Override
     public boolean isAuthenticated(HttpServletRequest request) {
-        if(request.getSession().getAttribute("isAuthenticated") != null){
-            return (boolean) request.getSession().getAttribute("isAuthenticated");
+        if(request.getSession().getAttribute(IS_AUTHENTICATED) != null){
+            return (boolean) request.getSession().getAttribute(IS_AUTHENTICATED);
         }
         return false;
     }
+
+    @Override
+    public void logout(HttpServletRequest req) {
+        req.getSession().setAttribute(IS_AUTHENTICATED,false);
+    }
+
+
 }
