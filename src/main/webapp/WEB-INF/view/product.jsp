@@ -38,7 +38,7 @@
                 koszyka
             </button>
         </form>
-        <form action="/dodaj-do-koszyka" method="POST">
+        <form action="/kup-teraz" method="POST">
         <button type="submit" class="btn btn-default" name="productId" value="${product.id}">Kup Teraz
         </button>
         </form>

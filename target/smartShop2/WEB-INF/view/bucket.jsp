@@ -52,7 +52,7 @@
                     <c:choose>
                         <c:when test="${isLogin}">
                             <form action="/kup-i-zaplac" method="POST">
-                                <button type="submit" class="btn btn-default" value="${product.id}">Kup i Zapłać</button>
+                                <button type="submit" class="btn btn-danger" value="${product.id}">Kup i Zapłać</button>
                             </form>
                         </c:when>
                         <c:otherwise>
